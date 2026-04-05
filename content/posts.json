@@ -1,5 +1,60 @@
 [
   {
+    "date": "2026-04-05",
+    "slug": "2026-04-05-state-of-fashion-2026-great-reset",
+    "title": "State of Fashion 2026: Inizia l'era del \"Great Reset\" secondo BoF e McKinsey",
+    "summary": "L'atteso report annuale fotografa un'industria costretta a resettare le proprie priorità: meno hype e più valore reale.",
+    "category": "Market Analysis",
+    "sources": [
+      "https://www.businessoffashion.com/",
+      "https://www.mckinsey.com/industries/retail/our-insights"
+    ]
+  },
+  {
+    "date": "2026-04-04",
+    "slug": "2026-04-04-rilancio-janet-howard-sportswear",
+    "title": "Il rilancio di Janet Howard: focus su sportswear contemporaneo e sartoria",
+    "summary": "Janet Howard torna sulla scena con una visione rinnovata, puntando su tagli netti e un \"power dressing\" funzionale per il 2026.",
+    "category": "Brand Relaunch",
+    "sources": [
+      "https://wwd.com/fashion-news/",
+      "https://hypebae.com"
+    ]
+  },
+  {
+    "date": "2026-04-03",
+    "slug": "2026-04-03-etsy-bando-pelliccia-animale",
+    "title": "Sostenibilità: Etsy banna ufficialmente la pelliccia animale dalla piattaforma",
+    "summary": "Etsy compie un passo decisivo verso l'etica animale, vietando la vendita di qualsiasi prodotto contenente pelliccia vera.",
+    "category": "Sustainability",
+    "sources": [
+      "https://www.businessoffashion.com/news/",
+      "https://www.voguebusiness.com"
+    ]
+  },
+  {
+    "date": "2026-04-02",
+    "slug": "2026-04-02-nordstrom-vendite-stabili-private-company",
+    "title": "Nordstrom: vendite stabili ai livelli 2019 dopo il passaggio a società privata",
+    "summary": "Il gigante del retail americano Nordstrom consolida la sua ripresa, beneficiando di una gestione più snella e lontana dai mercati pubblici.",
+    "category": "Retail Business",
+    "sources": [
+      "https://www.businessoffashion.com/news/",
+      "https://www.retaildive.com"
+    ]
+  },
+  {
+    "date": "2026-04-01",
+    "slug": "2026-04-01-clown-core-runway-spring-2026",
+    "title": "Oltre lo scherzo: il \"Clown-Core\" domina le passerelle Spring 2026",
+    "summary": "Non è un pesce d'aprile: l'estetica teatrale del Clown-Core si conferma come uno dei trend più forti e divisivi della stagione Spring 2026.",
+    "category": "Trend",
+    "sources": [
+      "https://www.vogue.com/article/april-fools-day-clown-style-2026-runways",
+      "https://fashionunited.it"
+    ]
+  },
+  {
     "date": "2026-03-29",
     "slug": "2026-03-29-antitrust-sephora-benefit-minori",
     "title": "L'Antitrust italiana indaga Sephora e Benefit per il marketing beauty ai minori",
