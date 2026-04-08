@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{TITLE}}</title>
+  <title>{{TITLE}} | SeeteeS MOD</title>
   <meta name="description" content="{{DESCRIPTION}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -15,70 +15,69 @@
     <header class="topbar">
       <div class="container topbar-inner">
         <a class="brand-link" href="../index.html">
-          <p class="brand-kicker">Italian fashion briefing</p>
-          <div class="brand-name">SeeteeS MOD</div>
+          <p class="brand-kicker">Intelligence for decision makers</p>
+          <div class="brand-name">SeeteeS<span>.MOD</span></div>
         </a>
         <nav class="topbar-nav">
-          <a class="nav-link" href="../index.html">Home</a>
+          <a class="nav-link" href="../index.html">Analisi</a>
           <a class="nav-link" href="../archive.html">Archivio</a>
         </nav>
       </div>
     </header>
 
     <main class="container">
-      <a class="back-link" href="../index.html">← Torna alla home</a>
+      <section class="masthead">
+        <p class="eyebrow">Briefing Strategico // {{DATE}}</p>
+        <h1>{{TITLE}}</h1>
+        <p class="lead">{{LEAD}}</p>
+      </section>
 
-      <section class="article-hero">
-        <div class="article-intro">
-          <p class="eyebrow">{{DATE}} · News del giorno</p>
-          <h1>{{TITLE}}</h1>
-          <p>{{LEAD}}</p>
+      <section class="article-section">
+        <h2>Punti Chiave</h2>
+        <ul>
+          <li>{{POINT_1}}</li>
+          <li>{{POINT_2}}</li>
+          <li>{{POINT_3}}</li>
+        </ul>
+      </section>
+
+      <section class="article-section">
+        <h2>Perché conta</h2>
+        <p>{{WHY_IT_MATTERS}}</p>
+      </section>
+
+      <section class="article-section">
+        <h2>Fonti verificate</h2>
+        <div class="hero-actions">
+          <a href="{{SOURCE_URL_1}}" target="_blank" class="button-secondary">Fonte 1</a>
+          <a href="{{SOURCE_URL_2}}" target="_blank" class="button-secondary">Fonte 2</a>
         </div>
-        <aside class="article-panel">
-          <p class="label">Framework</p>
-          <h3>Perimetro editoriale</h3>
-          <p>Sintesi rapida, fonti affidabili, focus su impatto business, immagine e mercato.</p>
-        </aside>
       </section>
 
-      <section class="article-layout">
-        <article class="article-main">
-          <section class="article-section">
-            <h2>Cosa succede oggi</h2>
-            <ul>
-              <li>{{POINT_1}}</li>
-              <li>{{POINT_2}}</li>
-              <li>{{POINT_3}}</li>
-            </ul>
-          </section>
+      <section class="newsletter-cta">
+        <div class="newsletter-box">
+          <p class="label">Executive Briefing</p>
+          <h2>Intelligence SeeteeS.</h2>
+          <p>Entra nel network dei decisori. Briefing strategici e segnali di mercato ogni mattina.</p>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="indirizzo@aziendale.com" required>
+            <button type="submit" class="button">Sottoscrivi</button>
+          </form>
+        </div>
+      </section>
 
-          <section class="article-section">
-            <h2>Perché conta</h2>
-            <p>{{WHY_IT_MATTERS}}</p>
-          </section>
-
-          <section class="article-section">
-            <h2>Fonti</h2>
-            <ul class="source-list">
-              <li>{{SOURCE_1}}</li>
-              <li>{{SOURCE_2}}</li>
-            </ul>
-          </section>
-        </article>
-
-        <aside class="article-rail">
-          <div class="article-panel">
-            <p class="label">Workflow</p>
-            <h3>Pipeline</h3>
-            <ol class="timeline">
-              <li>Scout</li>
-              <li>Writer</li>
-              <li>Verifica</li>
-              <li>Pubblicazione</li>
-            </ol>
+      <footer class="footer">
+        <div class="container footer-inner">
+          <div>
+            <div class="footer-brand">SeeteeS.MOD</div>
+            <p class="footer-note">Fashion System Business Intelligence // © 2026.</p>
           </div>
-        </aside>
-      </section>
+          <div class="footer-links">
+            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link" href="../archive.html">Archivio</a>
+          </div>
+        </div>
+      </footer>
     </main>
   </div>
 </body>
