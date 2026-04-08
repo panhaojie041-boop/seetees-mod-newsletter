@@ -398,6 +398,113 @@ h2 { font-size: 2.4rem; }
 .source-list li a:hover { border-color: var(--ink); }
 
 .footer { padding: 80px 0; border-top: 0.5px solid var(--line); color: var(--muted); font-size: 0.8rem; }
+
+/* Intelligence Modules (V5) */
+.intelligence-module {
+  margin: 60px 0;
+  padding: 40px;
+  background: var(--surface);
+  border: 0.5px solid var(--line);
+  position: relative;
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 0.5px solid var(--line);
+  padding-bottom: 15px;
+}
+
+.module-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ink);
+}
+
+.module-status {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: #008000; /* Success/Live indicator */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.module-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: currentColor;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Data Visualization */
+.chart-container {
+  width: 100%;
+  min-height: 400px;
+  background: #fcfcfc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chart-caption {
+  margin-top: 20px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* 3D Preview (CLO 3D) */
+.viewer-3d-container {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: #f0f0f0;
+  border: 0.5px solid var(--line);
+  overflow: hidden;
+  position: relative;
+}
+
+.viewer-3d-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.viewer-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.control-btn {
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.control-btn:hover { opacity: 0.8; }
+
 .footer-brand { font-family: var(--font-serif); color: var(--ink); font-size: 1.5rem; margin-bottom: 12px; }
 
 @media (max-width: 768px) {
