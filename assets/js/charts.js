@@ -1,6 +1,7 @@
 /**
  * SeeteeS MOD // Intelligence Charts
  * Visualization for Luxury Market Data Q1 2026
+ * Updated with actual financial data: Hermès (RMS.PA) vs LVMH (MC.PA)
  */
 
 function initPerformanceChart(containerId, dataLabels, datasets) {
@@ -38,7 +39,12 @@ function initPerformanceChart(containerId, dataLabels, datasets) {
           titleFont: { family: "'IBM Plex Mono', monospace" },
           bodyFont: { family: "'Inter', sans-serif" },
           padding: 12,
-          displayColors: false
+          displayColors: false,
+          callbacks: {
+            label: function(context) {
+              return context.dataset.label + ': ' + context.parsed.y + '% (base 100)';
+            }
+          }
         }
       },
       scales: {
@@ -62,12 +68,13 @@ function initPerformanceChart(containerId, dataLabels, datasets) {
   });
 }
 
-// Data injection for Q1 2026 Performance
+// Data injection for Q1 2026 Performance (Normalized 100-base on 02 Gen 2026)
 document.addEventListener('DOMContentLoaded', () => {
-  const labels = ['Gen', 'Feb', 'Mar', 'Apr (Est)'];
+  const labels = ['02 GEN', '30 GEN', '27 FEB', '31 MAR', '08 APR'];
   
-  const hermesData = [100, 108.5, 114.2, 119.8]; // Normalized 100 base
-  const lvmhData = [100, 102.1, 98.4, 96.2];    // Great Reset impact
+  // Data points calculated from raw Euro values provided by Fashion News Scout
+  const hermesData = [100, 95.06, 88.13, 74.35, 82.42]; 
+  const lvmhData = [100, 95.25, 83.11, 71.95, 77.25];    
   
   const datasets = [
     {

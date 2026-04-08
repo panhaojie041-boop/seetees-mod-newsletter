@@ -48,7 +48,7 @@
           <span class="module-title">Data Intelligence // Market Signal</span>
           <span class="module-status">Live Data</span>
         </div>
-        <div class="chart-container">
+        <div class="chart-container" style="height: 400px; padding: 20px; background: #fff;">
           <canvas id="marketChart"></canvas>
         </div>
         <div class="chart-caption">
@@ -63,6 +63,7 @@
         </div>
         <div class="viewer-3d-container">
           <!-- Placeholder for CLO 3D viewer (iframe or canvas) -->
+          <div class="clo-placeholder">Caricamento Modello 3D CLO-SET...</div>
           <iframe id="clo3d-iframe" src="{{CLO3D_URL}}"></iframe>
           <div class="viewer-controls">
             <button class="control-btn" onclick="toggleFullscreen()">Expand</button>
@@ -70,7 +71,7 @@
           </div>
         </div>
         <div class="chart-caption">
-          Simulazione CLO 3D: Analisi strutturale e texture mapping del prototipo.
+          Simulazione CLO 3D: Analisi strutturale e texture mapping del prototipo (Preview 2026).
         </div>
       </section>
 
@@ -84,6 +85,19 @@
         <div class="hero-actions">
           <a href="{{SOURCE_URL_1}}" target="_blank" class="button-secondary">Fonte 1</a>
           <a href="{{SOURCE_URL_2}}" target="_blank" class="button-secondary">Fonte 2</a>
+        </div>
+        
+        <!-- Social Sharing -->
+        <div class="social-sharing">
+          <p class="story-meta" style="margin-right: 20px;">Condividi // Intelligence Distribution:</p>
+          <a href="#" class="share-btn">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            LinkedIn
+          </a>
+          <a href="#" class="share-btn">
+            <svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1 4h-3.5v7h-4v-7h-3v-4h3v-3.121c0-2.812 1.702-4.379 4.257-4.379 1.223 0 2.274.091 2.58.132v2.99h-1.769c-1.365 0-1.63.648-1.63 1.599V13.5z"/></svg>
+            X / Twitter
+          </a>
         </div>
       </section>
 
