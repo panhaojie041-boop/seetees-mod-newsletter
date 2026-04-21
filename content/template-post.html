@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{TITLE}} | SeeteeS MOD // Midnight Intelligence</title>
+  <title>{{TITLE}} | SeeteeS MOD // Avant-Garde Terminal</title>
   <meta name="description" content="{{DESCRIPTION}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
   <link rel="stylesheet" href="../styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body data-scroll-container>
-  <div id="vanta-bg"></div>
+  <!-- V7 Avant-Garde Overlays -->
+  <div id="v7-noise"></div>
+  <div class="tech-scanline"></div>
+
   <div class="site-shell">
     <header class="topbar">
       <div class="container topbar-inner">
@@ -26,135 +28,103 @@
           <a class="nav-link" href="../archive.html">Archivio</a>
         </nav>
       </div>
+      <!-- Marquee Sub-header -->
+      <div class="marquee-container">
+        <div class="marquee-content">
+          System Status: Zero-Touch Automation Active // Intelligence Briefing Q2 2026 // Luxury Market Dynamics // SeeteeS MOD // System Status: Zero-Touch Automation Active // Intelligence Briefing Q2 2026 // Luxury Market Dynamics // SeeteeS MOD //
+        </div>
+      </div>
     </header>
 
     <main class="container">
-      <section class="masthead">
-        <p class="eyebrow">Briefing Strategico // {{DATE}}</p>
-        <h1>{{TITLE}}</h1>
-        <p class="lead">{{LEAD}}</p>
+      <section class="masthead" style="padding-top: 220px;">
+        <p class="eyebrow text-reveal">Briefing Strategico // {{DATE}}</p>
+        <h1 class="text-reveal" style="font-family: var(--font-serif); font-size: 6rem; line-height: 0.9;">{{TITLE}}</h1>
+        <p class="lead text-reveal" style="font-size: 1.4rem; color: var(--muted); max-width: 800px; margin-top: 40px;">{{LEAD}}</p>
       </section>
 
-      <section class="article-section">
-        <h2>Punti Chiave</h2>
-        <ul>
-          <li>{{POINT_1}}</li>
-          <li>{{POINT_2}}</li>
-          <li>{{POINT_3}}</li>
-        </ul>
-      </section>
+      <article class="article-content" style="padding: 100px 0;">
+        <section class="article-section text-reveal">
+          <h2 style="font-family: var(--font-serif); font-size: 3rem; margin-bottom: 30px;">Punti Chiave</h2>
+          <ul style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); line-height: 2;">
+            <li>{{POINT_1}}</li>
+            <li>{{POINT_2}}</li>
+            <li>{{POINT_3}}</li>
+          </ul>
+        </section>
 
-      <!-- Intelligence Modules (V6 Dark Terminal) -->
-      <section class="intelligence-module" id="data-viz-module" style="display: none;">
-        <div class="module-header">
-          <span class="module-title">Data Intelligence // Market Signal</span>
-          <span class="module-status">Live Data</span>
-        </div>
-        <div class="chart-container">
-          <canvas id="marketChart"></canvas>
-        </div>
-        <div class="chart-caption">
-          Fig. 1.1: Analisi dell'andamento azionario comparato. Fonte: {{DATA_SOURCE}}.
-        </div>
-      </section>
-
-      <section class="intelligence-module" id="preview-3d-module" style="display: none;">
-        <div class="module-header">
-          <span class="module-title">3D Preview // Digital Asset Analysis</span>
-          <span class="module-status">Interattivo</span>
-        </div>
-        <div class="viewer-3d-container">
-          <!-- Placeholder for CLO 3D viewer (iframe or canvas) -->
-          <div class="clo-placeholder">Caricamento Modello 3D CLO-SET...</div>
-          <iframe id="clo3d-iframe" src="{{CLO3D_URL}}"></iframe>
-          <div class="viewer-controls">
-            <button class="control-btn" onclick="toggleFullscreen()">Expand</button>
-            <button class="control-btn" onclick="toggleDetails()">Spec Sheet</button>
+        <!-- 3D Preview Module Styled for V7 -->
+        <section class="intelligence-module text-reveal" id="preview-3d-module" style="display: {{SHOW_3D}}; margin: 100px 0;">
+          <div class="module-header" style="display: flex; justify-content: space-between; border-bottom: 0.5px solid var(--line); padding-bottom: 10px; margin-bottom: 20px;">
+            <span class="module-title" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-transform: uppercase;">3D Preview // Digital Asset Analysis</span>
+            <span class="module-status" style="font-family: var(--font-mono); font-size: 0.6rem; color: #fff;">INTERATTIVO</span>
           </div>
-        </div>
-        <div class="chart-caption">
-          Simulazione CLO 3D: Analisi strutturale e texture mapping del prototipo (Preview 2026).
-        </div>
-      </section>
+          <div class="viewer-3d-container" style="background: #000; border: 0.5px solid var(--line); aspect-ratio: 16/9; position: relative;">
+            <iframe id="clo3d-iframe" src="{{CLO3D_URL}}" style="width: 100%; height: 100%; border: none;"></iframe>
+          </div>
+        </section>
 
-      <section class="article-section">
-        <h2>Perché conta</h2>
-        <p>{{WHY_IT_MATTERS}}</p>
-      </section>
+        <section class="article-section text-reveal" style="margin-top: 80px;">
+          <h2 style="font-family: var(--font-serif); font-size: 3rem; margin-bottom: 30px;">Perché conta</h2>
+          <p style="font-size: 1.2rem; line-height: 1.6;">{{WHY_IT_MATTERS}}</p>
+        </section>
 
-      <section class="article-section">
-        <h2>Fonti verificate</h2>
-        <div class="hero-actions">
-          <a href="{{SOURCE_URL_1}}" target="_blank" class="button-secondary">Fonte 1</a>
-          <a href="{{SOURCE_URL_2}}" target="_blank" class="button-secondary">Fonte 2</a>
-        </div>
-        
-        <!-- Social Sharing - V6 Styles -->
-        <div class="social-sharing">
-          <p class="story-meta" style="margin-right: 20px;">Distribuzione Intelligence:</p>
-          <a href="#" class="share-btn">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            LinkedIn
-          </a>
-          <a href="#" class="share-btn">
-            <svg viewBox="0 0 24 24"><path d="M14 13.5h2.5l1 4h-3.5v7h-4v-7h-3v-4h3v-3.121c0-2.812 1.702-4.379 4.257-4.379 1.223 0 2.274.091 2.58.132v2.99h-1.769c-1.365 0-1.63.648-1.63 1.599V13.5z"/></svg>
-            X / Twitter
-          </a>
-        </div>
-      </section>
-
-      <section class="newsletter-cta">
-        <div class="newsletter-box">
-          <p class="label">Executive Briefing</p>
-          <h2>The Intel.</h2>
-          <p>Entra nel network dei decisori. Briefing strategici e segnali di mercato ogni mattina nel tuo terminale operativo.</p>
-          <form class="newsletter-form" onsubmit="return false;">
-            <input type="email" placeholder="indirizzo@aziendale.com" required>
-            <button type="submit" class="button">Sottoscrivi</button>
-          </form>
-        </div>
-      </section>
+        <section class="article-section text-reveal" style="margin-top: 80px;">
+          <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 20px;">Fonti verificate</h2>
+          <div class="hero-actions" style="display: flex; gap: 20px;">
+            <a href="{{SOURCE_URL_1}}" target="_blank" class="nav-link" style="border: 0.5px solid var(--line); padding: 10px 20px;">Fonte 1</a>
+            <a href="{{SOURCE_URL_2}}" target="_blank" class="nav-link" style="border: 0.5px solid var(--line); padding: 10px 20px;">Fonte 2</a>
+          </div>
+          
+          <div class="social-sharing">
+            <p class="story-meta" style="margin-right: 20px;">Distribuzione Intelligence:</p>
+            <a href="#" class="share-btn">LinkedIn</a>
+            <a href="#" class="share-btn">X / Twitter</a>
+          </div>
+        </section>
+      </article>
 
       <footer class="footer">
         <div class="container footer-inner">
+          <div class="marquee-container" style="margin-bottom: 60px;">
+            <div class="marquee-content">
+              Intelligence Flow // Fashion System Business Intelligence // Italian Language Core // © 2026 // Intelligence Flow // Fashion System Business Intelligence // Italian Language Core // © 2026 //
+            </div>
+          </div>
           <div>
             <div class="footer-brand">SeeteeS.MOD</div>
-            <p class="footer-note">Fashion System Business Intelligence // © 2026.</p>
-          </div>
-          <div class="footer-links">
-            <a class="nav-link" href="../index.html">Home</a>
-            <a class="nav-link" href="../archive.html">Archivio</a>
+            <p class="footer-note">Fashion System Business Intelligence // Italian Language Core // © 2026.</p>
           </div>
         </div>
       </footer>
     </main>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      if (typeof VANTA !== 'undefined') {
-        VANTA.FOG({
-          el: "#vanta-bg",
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          highlightColor: 0x1a1a1a,
-          midtoneColor: 0x0,
-          lowlightColor: 0x0,
-          baseColor: 0x0,
-          blurFactor: 0.90,
-          speed: 1.50,
-          zoom: 0.50
-        });
-      }
-      new LocomotiveScroll({
+      const scroller = new LocomotiveScroll({
         el: document.querySelector('[data-scroll-container]'),
         smooth: true
       });
+
+      scroller.on('scroll', (args) => {
+        document.querySelectorAll('.text-reveal').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.9) {
+            el.classList.add('active');
+          }
+        });
+      });
+      
+      setTimeout(() => {
+        document.querySelectorAll('.text-reveal').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.9) {
+            el.classList.add('active');
+          }
+        });
+      }, 500);
     });
   </script>
 </body>

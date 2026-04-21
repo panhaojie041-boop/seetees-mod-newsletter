@@ -35,12 +35,12 @@ function build() {
   // Update HERO
   const heroHtml = `
         <article class="hero-copy">
-          <p class="eyebrow text-reveal">Cover Story // ${formatLongDate(latestPost.date)}</p>
-          <h2 class="glow-title text-reveal reveal-delay-1">${latestPost.title}</h2>
-          <p class="text-reveal reveal-delay-2">${latestPost.summary}</p>
+          <p class="eyebrow text-reveal">Terminal Entry // ${formatLongDate(latestPost.date)}</p>
+          <h2 class="text-reveal">${latestPost.title}</h2>
+          <p class="text-reveal">${latestPost.summary}</p>
           <div class="hero-actions">
-            <a class="button" href="posts/${latestPost.slug}.html">Leggi l'Analisi Completa</a>
-            <a class="button-secondary" href="archive.html">Vedi Archivio Strategico</a>
+            <a class="button" href="posts/${latestPost.slug}.html">Open Briefing</a>
+            <a class="button-secondary" href="archive.html">Data Archive</a>
           </div>
         </article>`;
   
@@ -52,31 +52,31 @@ function build() {
   // Update News List in index.html (latest 5)
   const newsListHtml = posts.slice(1, 6).map(post => `
           <a href="posts/${post.slug}.html" class="news-row text-reveal">
-            <p class="story-meta">${formatDate(post.date)}</p>
+            <p class="story-meta">${formatDate(post.date).replace(/ /g, '.')}</p>
             <h2>${post.title}</h2>
-            <p class="inline-link">Sfoglia →</p>
+            <p class="inline-link">READ_MORE</p>
           </a>`).join('');
-  
+
   indexContent = indexContent.replace(
     /<!-- NEWS_LIST_START -->[\s\S]*<!-- NEWS_LIST_END -->/,
     `<!-- NEWS_LIST_START -->${newsListHtml}\n          <!-- NEWS_LIST_END -->`
   );
-  
+
   fs.writeFileSync(indexPath, indexContent);
   console.log('✓ index.html updated');
 
   // Update archive.html
   let archiveContent = fs.readFileSync(archivePath, 'utf8');
   const fullNewsListHtml = posts.map(post => `
-        <a href="posts/${post.slug}.html" class="news-row">
-          <p class="story-meta">${formatDate(post.date)}</p>
+        <a href="posts/${post.slug}.html" class="news-row text-reveal">
+          <p class="story-meta">${formatDate(post.date).replace(/ /g, '.')}</p>
           <h2>${post.title}</h2>
-          <p class="inline-link">Apri →</p>
+          <p class="inline-link">ACCESS_DATA</p>
         </a>`).join('');
 
   archiveContent = archiveContent.replace(
-    /<!-- NEWS_LIST_START -->[\s\S]*<!-- NEWS_LIST_END -->/,
-    `<!-- NEWS_LIST_START -->${fullNewsListHtml}\n        <!-- NEWS_LIST_END -->`
+    /<!-- ARCHIVE_LIST_START -->[\s\S]*<!-- ARCHIVE_LIST_END -->/,
+    `<!-- ARCHIVE_LIST_START -->${fullNewsListHtml}\n        <!-- ARCHIVE_LIST_END -->`
   );
 
   fs.writeFileSync(archivePath, archiveContent);
