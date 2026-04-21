@@ -8,9 +8,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-scroll-container>
+  <!-- Vibe Canvas Background -->
+  <div id="vanta-bg"></div>
+
   <!-- Intro Splash Screen - Obsidian V6 -->
   <div id="intro-screen">
     <div class="intro-logo">SeeteeS MOD.</div>
@@ -38,9 +42,9 @@
       <section class="hero-section">
         <!-- HERO_START -->
         <article class="hero-copy">
-          <p class="eyebrow">Cover Story // 9 Aprile 2026</p>
-          <h2>Il Futuro del Lusso tra Resilienza e Nuovi Orizzonti: Harrods, Goldenpoint e Gucci</h2>
-          <p>Dalle perdite di Harrods alla scommessa Dubai di Goldenpoint, fino al ritorno all'iconicità di Gucci: analisi dei tre pilastri del lusso nel 2026.</p>
+          <p class="eyebrow text-reveal">Cover Story // 9 Aprile 2026</p>
+          <h2 class="glow-title text-reveal reveal-delay-1">Il Futuro del Lusso tra Resilienza e Nuovi Orizzonti: Harrods, Goldenpoint e Gucci</h2>
+          <p class="text-reveal reveal-delay-2">Dalle perdite di Harrods alla scommessa Dubai di Goldenpoint, fino al ritorno all'iconicità di Gucci: analisi dei tre pilastri del lusso nel 2026.</p>
           <div class="hero-actions">
             <a class="button" href="posts/2026-04-09-futuro-lusso-harrods-goldenpoint-gucci.html">Leggi l'Analisi Completa</a>
             <a class="button-secondary" href="archive.html">Vedi Archivio Strategico</a>
@@ -48,13 +52,13 @@
         </article>
         <!-- HERO_END -->
         
-        <div class="hero-media">
-          <img src="assets/hero-c1-editorial.png" alt="Analisi Lusso 2026">
+        <div class="hero-media" data-scroll data-scroll-speed="1">
+          <img src="https://images.unsplash.com/photo-1548033511-46aa9174b338?q=80&w=2070&auto=format&fit=crop" alt="Luxury Retail Analysis">
         </div>
       </section>
 
       <!-- Data Intelligence Block - V6 Dark Terminal -->
-      <section class="intelligence-module" id="market-viz">
+      <section class="intelligence-module" id="market-viz" data-scroll data-scroll-speed="0.5">
         <div class="module-header">
           <span class="module-title">Market Intelligence // Luxury Performance Q1 2026</span>
           <span class="module-status">Live Market Signal</span>
@@ -71,32 +75,32 @@
       <section class="content-terminal">
         <div class="section-head">
           <p class="section-kicker">Briefing Quotidiano</p>
-          <h2 class="section-title">Segnali di Mercato</h2>
+          <h2 class="section-title text-reveal">Segnali di Mercato</h2>
         </div>
 
         <div class="news-list">
           <!-- NEWS_LIST_START -->
-          <a href="posts/2026-04-09-kering-bottega-veneta-rongone-dimissioni.html" class="news-row">
+          <a href="posts/2026-04-09-kering-bottega-veneta-rongone-dimissioni.html" class="news-row text-reveal">
             <p class="story-meta">09 APR 26</p>
             <h2>Kering in rimpasto: Bartolomeo Rongone si dimette da CEO di Bottega Veneta</h2>
             <p class="inline-link">Sfoglia →</p>
           </a>
-          <a href="posts/2026-04-08-fashion-trust-us-awards-talenti.html" class="news-row">
+          <a href="posts/2026-04-08-fashion-trust-us-awards-talenti.html" class="news-row text-reveal">
             <p class="story-meta">08 APR 26</p>
             <h2>Fashion Trust U.S. Awards 2026: L'incubatore di talenti che sfida il retail tradizionale</h2>
             <p class="inline-link">Sfoglia →</p>
           </a>
-          <a href="posts/2026-04-07-wylie-welling-moda-circolare.html" class="news-row">
+          <a href="posts/2026-04-07-wylie-welling-moda-circolare.html" class="news-row text-reveal">
             <p class="story-meta">07 APR 26</p>
             <h2>Debutto Wylie Welling: La rivoluzione circolare dell'erede Carhartt</h2>
             <p class="inline-link">Sfoglia →</p>
           </a>
-          <a href="posts/2026-04-06-saks-global-riorganizzazione.html" class="news-row">
+          <a href="posts/2026-04-06-saks-global-riorganizzazione.html" class="news-row text-reveal">
             <p class="story-meta">06 APR 26</p>
             <h2>Saks Global: Il piano di riorganizzazione per l'uscita dal Chapter 11</h2>
             <p class="inline-link">Sfoglia →</p>
           </a>
-          <a href="posts/2026-04-05-state-of-fashion-2026-great-reset.html" class="news-row">
+          <a href="posts/2026-04-05-state-of-fashion-2026-great-reset.html" class="news-row text-reveal">
             <p class="story-meta">05 APR 26</p>
             <h2>State of Fashion 2026: Inizia l'era del "Great Reset" secondo BoF e McKinsey</h2>
             <p class="inline-link">Sfoglia →</p>
@@ -106,9 +110,9 @@
       </section>
 
       <section class="newsletter-cta">
-        <div class="newsletter-box">
+        <div class="newsletter-box" data-scroll data-scroll-speed="1.2">
           <p class="label">Executive Briefing</p>
-          <h2>The SeeteeS Intel.</h2>
+          <h2 class="glow-title">The SeeteeS Intel.</h2>
           <p>Intelligence strategica e segnali di mercato riservati ai professionisti. Ogni mattina nel tuo terminale operativo.</p>
           <form class="newsletter-form" onsubmit="return false;">
             <input type="email" placeholder="indirizzo@aziendale.com" required>
@@ -132,16 +136,67 @@
     </main>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="assets/js/charts.js"></script>
   <script>
-    // Obsidian Splash Screen Logic
-    window.addEventListener('load', () => {
+    // Vibe Coding Initialization
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Vanta.js Fog Background
+      if (typeof VANTA !== 'undefined') {
+        VANTA.FOG({
+          el: "#vanta-bg",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          highlightColor: 0x1a1a1a,
+          midtoneColor: 0x0,
+          lowlightColor: 0x0,
+          baseColor: 0x0,
+          blurFactor: 0.90,
+          speed: 1.50,
+          zoom: 0.50
+        });
+      }
+
+      // 2. Locomotive Scroll
+      const scroller = new LocomotiveScroll({
+        el: document.querySelector('[data-scroll-container]'),
+        smooth: true,
+        tablet: { smooth: true },
+        smartphone: { smooth: true }
+      });
+
+      // 3. Obsidian Splash Screen Logic
       const intro = document.getElementById('intro-screen');
       setTimeout(() => {
         intro.classList.add('hidden');
-        window.scrollTo(0, 0);
-      }, 3000); // 3 seconds for cinematic feel
+        scroller.update();
+      }, 3000);
+
+      // 4. Reveal Animations on Scroll
+      scroller.on('scroll', (args) => {
+        document.querySelectorAll('.text-reveal').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.9) {
+            el.classList.add('active');
+          }
+        });
+      });
+      
+      // Trigger first check
+      setTimeout(() => {
+        document.querySelectorAll('.text-reveal').forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.9) {
+            el.classList.add('active');
+          }
+        });
+      }, 3500);
     });
   </script>
 </body>

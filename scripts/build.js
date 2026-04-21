@@ -35,9 +35,9 @@ function build() {
   // Update HERO
   const heroHtml = `
         <article class="hero-copy">
-          <p class="eyebrow">Cover Story // ${formatLongDate(latestPost.date)}</p>
-          <h2>${latestPost.title}</h2>
-          <p>${latestPost.summary}</p>
+          <p class="eyebrow text-reveal">Cover Story // ${formatLongDate(latestPost.date)}</p>
+          <h2 class="glow-title text-reveal reveal-delay-1">${latestPost.title}</h2>
+          <p class="text-reveal reveal-delay-2">${latestPost.summary}</p>
           <div class="hero-actions">
             <a class="button" href="posts/${latestPost.slug}.html">Leggi l'Analisi Completa</a>
             <a class="button-secondary" href="archive.html">Vedi Archivio Strategico</a>
@@ -51,7 +51,7 @@ function build() {
 
   // Update News List in index.html (latest 5)
   const newsListHtml = posts.slice(1, 6).map(post => `
-          <a href="posts/${post.slug}.html" class="news-row">
+          <a href="posts/${post.slug}.html" class="news-row text-reveal">
             <p class="story-meta">${formatDate(post.date)}</p>
             <h2>${post.title}</h2>
             <p class="inline-link">Sfoglia →</p>
