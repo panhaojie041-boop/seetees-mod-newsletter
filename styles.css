@@ -132,12 +132,51 @@ body::before {
   letter-spacing: -0.05em;
   text-transform: uppercase;
   margin-bottom: 40px;
+  color: var(--terminal);
+  font-family: var(--font-mono);
 }
 
 .hero-title span {
-  display: block;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--ink);
+  display: inline;
+  color: inherit;
+  -webkit-text-stroke: none;
+}
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background: var(--terminal);
+  margin-left: 5px;
+  vertical-align: middle;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* CAD OVERLAY SYSTEM */
+.cad-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 65, 0.05);
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  z-index: 20;
+}
+
+.hero-image-box:hover .cad-overlay, .product-card:hover .cad-overlay {
+  opacity: 1;
 }
 
 .hero-desc {
@@ -257,14 +296,48 @@ body::before {
   background: rgba(0, 255, 65, 0.05);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-start;
   opacity: 0;
   transition: var(--transition);
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.65rem;
   color: var(--terminal);
   padding: 20px;
+  z-index: 20;
+}
+
+.cad-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+
+.cad-frame {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid var(--terminal);
+  border-style: dashed;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.product-cad-overlay p {
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2px 5px;
+    margin: 2px 0;
+    border-left: 2px solid var(--terminal);
 }
 
 .product-card:hover .product-img {

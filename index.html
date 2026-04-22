@@ -123,29 +123,9 @@
     </footer>
   </main>
 
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="aethelgard.js"></script>
   <script>
-    // Terminal Auto-typing Effect
-    const statusEl = document.getElementById('terminal-status');
-    const messages = [
-      '[init_system_v1.0]...',
-      '[loading_trend_compiler]...',
-      '[detecting:3d_knitting_v2.5]...',
-      '[detecting:bio_synth_cell_v1.2]...',
-      '[detecting:holo_text_neo_09]...',
-      '[connecting_seetees_ai_core]...',
-      '[system_ready]'
-    ];
-    let msgIndex = 0;
-
-    function nextMessage() {
-      if (msgIndex < messages.length) {
-        statusEl.textContent = messages[msgIndex];
-        msgIndex++;
-        setTimeout(nextMessage, 1000 + Math.random() * 1000);
-      }
-    }
-    nextMessage();
-
     // Smooth Scroll for Navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {

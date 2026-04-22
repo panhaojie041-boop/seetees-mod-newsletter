@@ -1,31 +1,29 @@
 // Aethelgard Terminal Engine [v1.0]
 const terminalInit = () => {
-    const heroTitle = document.querySelector('.hero-copy h2');
-    if (!heroTitle) return;
+    const statusEl = document.getElementById('terminal-status');
+    if (!statusEl) return;
 
-    const originalText = "[init_aethelgard] " + heroTitle.innerText;
-    heroTitle.innerText = '';
-    heroTitle.style.opacity = '1';
-    heroTitle.classList.remove('reveal');
+    const messages = [
+        '[init_system_v1.0]...',
+        '[loading_trend_compiler]...',
+        '[detecting:3d_knitting_v2.5]...',
+        '[detecting:bio_synth_cell_v1.2]...',
+        '[detecting:holo_text_neo_09]...',
+        '[detecting:haptic_perf_text_88]...',
+        '[detecting:dt_supply_reset_v4]...',
+        '[connecting_seetees_ai_core]...',
+        '[system_ready]'
+    ];
+    let msgIndex = 0;
 
-    let i = 0;
-    const speed = 40;
-    const typeWriter = () => {
-        if (i < originalText.length) {
-            heroTitle.innerHTML += originalText.charAt(i);
-            i++;
-            setTimeout(typeWriter, speed);
-        } else {
-            // Add terminal cursor
-            heroTitle.innerHTML += '<span class="cursor">_</span>';
+    const nextMessage = () => {
+        if (msgIndex < messages.length) {
+            statusEl.textContent = messages[msgIndex];
+            msgIndex++;
+            setTimeout(nextMessage, 1000 + Math.random() * 1000);
         }
     };
-    
-    // Initial delay for system boot simulation
-    setTimeout(() => {
-        console.log('[AETHELGARD_SYSTEM_BOOT]');
-        typeWriter();
-    }, 800);
+    nextMessage();
 };
 
 // The Code of Trend - D3.js Network Visualization
@@ -33,19 +31,11 @@ const initTrendNetwork = (containerId) => {
     const container = document.getElementById(containerId);
     if (!container) return;
 
-    // Load D3.js dynamically if not present
-    if (typeof d3 === 'undefined') {
-        const script = document.createElement('script');
-        script.src = 'https://d3js.org/d3.v7.min.js';
-        script.onload = () => renderNetwork(container);
-        document.head.appendChild(script);
-    } else {
-        renderNetwork(container);
-    }
-
     function renderNetwork(container) {
         const width = container.clientWidth;
         const height = 400;
+
+        d3.select(container).selectAll("svg").remove();
 
         const svg = d3.select(container)
             .append('svg')
@@ -54,32 +44,31 @@ const initTrendNetwork = (containerId) => {
             .attr('viewBox', `0 0 ${width} ${height}`);
 
         const nodes = [
-            { id: 'Streetwear', group: 1 },
-            { id: 'Cyberpunk', group: 1 },
-            { id: 'Bio-Fabric', group: 2 },
-            { id: '3D-Print', group: 2 },
-            { id: 'Luxe', group: 3 },
-            { id: 'Sustainability', group: 3 },
-            { id: 'Aethelgard', group: 0 }
+            { id: '3D_KNITTING', group: 1 },
+            { id: 'BIO_SYNTH_CELL', group: 1 },
+            { id: 'HOLO_TEXT_NEO', group: 2 },
+            { id: 'HAPTIC_PERF_TEXT', group: 2 },
+            { id: 'DT_SUPPLY_RESET', group: 3 },
+            { id: 'AETHELGARD_CORE', group: 0 }
         ];
 
         const links = [
-            { source: 'Aethelgard', target: 'Streetwear' },
-            { source: 'Aethelgard', target: 'Bio-Fabric' },
-            { source: 'Streetwear', target: 'Cyberpunk' },
-            { source: 'Bio-Fabric', target: '3D-Print' },
-            { source: 'Aethelgard', target: 'Luxe' },
-            { source: 'Luxe', target: 'Sustainability' }
+            { source: 'AETHELGARD_CORE', target: '3D_KNITTING' },
+            { source: 'AETHELGARD_CORE', target: 'BIO_SYNTH_CELL' },
+            { source: '3D_KNITTING', target: 'HAPTIC_PERF_TEXT' },
+            { source: 'BIO_SYNTH_CELL', target: 'DT_SUPPLY_RESET' },
+            { source: 'AETHELGARD_CORE', target: 'HOLO_TEXT_NEO' },
+            { source: 'HOLO_TEXT_NEO', target: '3D_KNITTING' }
         ];
 
         const simulation = d3.forceSimulation(nodes)
-            .force('link', d3.forceLink(links).id(d => d.id).distance(120))
-            .force('charge', d3.forceManyBody().strength(-400))
+            .force('link', d3.forceLink(links).id(d => d.id).distance(150))
+            .force('charge', d3.forceManyBody().strength(-500))
             .force('center', d3.forceCenter(width / 2, height / 2));
 
         const link = svg.append('g')
             .attr('stroke', '#00ff41')
-            .attr('stroke-opacity', 0.4)
+            .attr('stroke-opacity', 0.2)
             .selectAll('line')
             .data(links)
             .join('line')
@@ -89,10 +78,9 @@ const initTrendNetwork = (containerId) => {
             .selectAll('circle')
             .data(nodes)
             .join('circle')
-            .attr('r', 6)
-            .attr('fill', d => d.id === 'Aethelgard' ? '#ff00ff' : '#00ff41')
-            .attr('stroke', '#fff')
-            .attr('stroke-width', 1);
+            .attr('r', 5)
+            .attr('fill', d => d.id === 'AETHELGARD_CORE' ? '#ff00ff' : '#00ff41')
+            .attr('filter', 'drop-shadow(0 0 5px #00ff41)');
 
         const text = svg.append('g')
             .selectAll('text')
@@ -121,7 +109,6 @@ const initTrendNetwork = (containerId) => {
                 .attr('y', d => d.y);
         });
 
-        // Add Resize Listener
         window.addEventListener('resize', () => {
             const newWidth = container.clientWidth;
             svg.attr('viewBox', `0 0 ${newWidth} ${height}`);
@@ -129,33 +116,13 @@ const initTrendNetwork = (containerId) => {
             simulation.alpha(0.3).restart();
         });
     }
-};
 
-// CAD Hover Effect Engine
-const initCADHover = () => {
-    const targets = document.querySelectorAll('.hero-media, .news-row-img-container');
-    targets.forEach(target => {
-        target.style.position = 'relative';
-        target.style.overflow = 'hidden';
-
-        const overlay = document.createElement('div');
-        overlay.className = 'cad-overlay';
-        overlay.innerHTML = `
-            <div class="cad-grid"></div>
-            <div class="cad-frame"></div>
-            <div class="cad-data">
-                <p>[MODEL_SCAN: ACTIVE]</p>
-                <p>[MESH_DENSITY: HIGH]</p>
-                <p>[MATERIAL: TECH_SILK_V2]</p>
-                <p>[LATITUDE: 45.4642 N]</p>
-            </div>
-        `;
-        target.appendChild(overlay);
-    });
+    if (typeof d3 !== 'undefined') {
+        renderNetwork(container);
+    }
 };
 
 document.addEventListener('DOMContentLoaded', () => {
     terminalInit();
     initTrendNetwork('trend-network-container');
-    initCADHover();
 });
