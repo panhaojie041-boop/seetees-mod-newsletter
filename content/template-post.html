@@ -3,128 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{TITLE}} | SeeteeS MOD // Avant-Garde Terminal</title>
-  <meta name="description" content="{{DESCRIPTION}}">
+  <title>{{TITLE}} | SeeteeS MOD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body data-scroll-container>
-  <!-- V7 Avant-Garde Overlays -->
-  <div id="v7-noise"></div>
-  <div class="tech-scanline"></div>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand-link" href="../index.html" style="text-decoration: none; color: inherit;">
+        <div class="brand-name">SeeteeS<span>mod.</span></div>
+      </a>
+      <nav>
+        <a class="nav-link" href="../index.html">Analisi</a>
+        <a class="nav-link" href="../archive.html">Archivio</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="site-shell">
-    <header class="topbar">
-      <div class="container topbar-inner">
-        <a class="brand-link" href="../index.html">
-          <p class="brand-kicker">Intelligence for decision makers</p>
-          <div class="brand-name">SeeteeS<span>.MOD</span></div>
-        </a>
-        <nav class="topbar-nav">
-          <a class="nav-link" href="../index.html">Analisi</a>
-          <a class="nav-link" href="../archive.html">Archivio</a>
-        </nav>
+  <main class="container">
+    <article class="post-content reveal" style="padding: 80px 0;">
+      <span class="label-street">{{CATEGORY}} // {{DATE}}</span>
+      <h1 style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4.5rem); margin: 20px 0; line-height: 1;">{{TITLE}}</h1>
+      
+      <div style="margin: 40px 0; border: 4px solid #000; padding: 2px;">
+        <img src="{{IMAGE_URL}}" alt="{{TITLE}}" style="width: 100%; height: auto; display: block; filter: grayscale(100%);">
       </div>
-      <!-- Marquee Sub-header -->
-      <div class="marquee-container">
-        <div class="marquee-content">
-          System Status: Zero-Touch Automation Active // Intelligence Briefing Q2 2026 // Luxury Market Dynamics // SeeteeS MOD // System Status: Zero-Touch Automation Active // Intelligence Briefing Q2 2026 // Luxury Market Dynamics // SeeteeS MOD //
+
+      <div class="editorial-text" style="font-size: 1.2rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+        {{CONTENT}}
+      </div>
+      
+      <!-- 3D Placeholder -->
+      <div class="viewer-3d-container" style="margin-top: 60px; border: 2px dashed #ccc; padding: 40px; text-align: center;">
+        <p class="meta">3D VISUAL INTELLIGENCE TERMINAL</p>
+        <p style="color: #888;">[ Modello 3D in fase di caricamento... ]</p>
+      </div>
+    </article>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>
+          <div class="stamp-confidential">Confidential</div>
+        </div>
+        <div style="text-align: right;">
+          <p style="font-size: 0.6rem;">© SeeteeS All Rights Reserved.</p>
         </div>
       </div>
-    </header>
+    </footer>
+  </main>
 
-    <main class="container">
-      <section class="masthead" style="padding-top: 220px;">
-        <p class="eyebrow text-reveal">Briefing Strategico // {{DATE}}</p>
-        <h1 class="text-reveal" style="font-family: var(--font-serif); font-size: 6rem; line-height: 0.9;">{{TITLE}}</h1>
-        <p class="lead text-reveal" style="font-size: 1.4rem; color: var(--muted); max-width: 800px; margin-top: 40px;">{{LEAD}}</p>
-      </section>
-
-      <article class="article-content" style="padding: 100px 0;">
-        <section class="article-section text-reveal">
-          <h2 style="font-family: var(--font-serif); font-size: 3rem; margin-bottom: 30px;">Punti Chiave</h2>
-          <ul style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--muted); line-height: 2;">
-            <li>{{POINT_1}}</li>
-            <li>{{POINT_2}}</li>
-            <li>{{POINT_3}}</li>
-          </ul>
-        </section>
-
-        <!-- 3D Preview Module Styled for V7 -->
-        <section class="intelligence-module text-reveal" id="preview-3d-module" style="display: {{SHOW_3D}}; margin: 100px 0;">
-          <div class="module-header" style="display: flex; justify-content: space-between; border-bottom: 0.5px solid var(--line); padding-bottom: 10px; margin-bottom: 20px;">
-            <span class="module-title" style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-transform: uppercase;">3D Preview // Digital Asset Analysis</span>
-            <span class="module-status" style="font-family: var(--font-mono); font-size: 0.6rem; color: #fff;">INTERATTIVO</span>
-          </div>
-          <div class="viewer-3d-container" style="background: #000; border: 0.5px solid var(--line); aspect-ratio: 16/9; position: relative;">
-            <iframe id="clo3d-iframe" src="{{CLO3D_URL}}" style="width: 100%; height: 100%; border: none;"></iframe>
-          </div>
-        </section>
-
-        <section class="article-section text-reveal" style="margin-top: 80px;">
-          <h2 style="font-family: var(--font-serif); font-size: 3rem; margin-bottom: 30px;">Perché conta</h2>
-          <p style="font-size: 1.2rem; line-height: 1.6;">{{WHY_IT_MATTERS}}</p>
-        </section>
-
-        <section class="article-section text-reveal" style="margin-top: 80px;">
-          <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 20px;">Fonti verificate</h2>
-          <div class="hero-actions" style="display: flex; gap: 20px;">
-            <a href="{{SOURCE_URL_1}}" target="_blank" class="nav-link" style="border: 0.5px solid var(--line); padding: 10px 20px;">Fonte 1</a>
-            <a href="{{SOURCE_URL_2}}" target="_blank" class="nav-link" style="border: 0.5px solid var(--line); padding: 10px 20px;">Fonte 2</a>
-          </div>
-          
-          <div class="social-sharing">
-            <p class="story-meta" style="margin-right: 20px;">Distribuzione Intelligence:</p>
-            <a href="#" class="share-btn">LinkedIn</a>
-            <a href="#" class="share-btn">X / Twitter</a>
-          </div>
-        </section>
-      </article>
-
-      <footer class="footer">
-        <div class="container footer-inner">
-          <div class="marquee-container" style="margin-bottom: 60px;">
-            <div class="marquee-content">
-              Intelligence Flow // Fashion System Business Intelligence // Italian Language Core // © 2026 // Intelligence Flow // Fashion System Business Intelligence // Italian Language Core // © 2026 //
-            </div>
-          </div>
-          <div>
-            <div class="footer-brand">SeeteeS.MOD</div>
-            <p class="footer-note">Fashion System Business Intelligence // Italian Language Core // © 2026.</p>
-          </div>
-        </div>
-      </footer>
-    </main>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const scroller = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true
-      });
-
-      scroller.on('scroll', (args) => {
-        document.querySelectorAll('.text-reveal').forEach(el => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.9) {
-            el.classList.add('active');
+      const reveals = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
           }
         });
-      });
-      
-      setTimeout(() => {
-        document.querySelectorAll('.text-reveal').forEach(el => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight * 0.9) {
-            el.classList.add('active');
-          }
-        });
-      }, 500);
+      }, { threshold: 0.1 });
+      reveals.forEach(el => observer.observe(el));
     });
   </script>
 </body>
