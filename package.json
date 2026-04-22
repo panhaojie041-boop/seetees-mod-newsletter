@@ -1,0 +1,23 @@
+{
+  "name": "aethelgard",
+  "version": "1.0.0",
+  "description": "L'Avanguardia della Moda Codificata // Aethelgard Terminal Engine",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "deploy": "gh-pages -d ."
+  },
+  "keywords": [
+    "fashion",
+    "tech",
+    "ai",
+    "terminal",
+    "aethelgard"
+  ],
+  "author": "SeeteeS MOD",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "serve": "^14.2.1"
+  }
+}
