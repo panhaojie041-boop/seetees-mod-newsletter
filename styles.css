@@ -1,20 +1,20 @@
 :root {
-  /* Aethelgard v1.0 - Terminal Intelligence Palette */
-  --bg: #050505;          /* Deep Night */
-  --ink: #ffffff;         /* Pure White */
-  --terminal: #00ff41;    /* Matrix Green */
-  --cyan: #00ffff;        /* Digital Cyan */
-  --pink: #ff00ff;        /* Neon Pink */
-  --yellow: #ffff00;      /* Solar Yellow */
-  --surface: #101010;     /* Elevated Surface */
-  --line: rgba(0, 255, 65, 0.1); /* Terminal Line */
+  /* SeeteeS MOD V10 - Brutalist Luxe */
+  --bg: #eeeeee;          /* Neutral Cement Gray */
+  --ink: #000000;         /* Deep Black */
+  --surface: #ffffff;     /* Pure White */
+  --accent: #ff4500;      /* International Industrial Orange */
+  --muted: #888888;       /* Tech Gray */
+  --line: #000000;        /* Bold Grid Line */
   
   /* Typography */
   --font-main: 'Inter', sans-serif;
+  --font-serif: 'Cormorant Garamond', serif;
   --font-mono: 'IBM Plex Mono', monospace;
   
   /* Spacing */
-  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --grid-gap: 40px;
+  --transition: 0.2s cubic-bezier(0, 0, 0, 1); /* Sharp mechanical transition */
 }
 
 * {
@@ -28,12 +28,11 @@ body {
   background-color: var(--bg);
   color: var(--ink);
   font-family: var(--font-main);
+  line-height: 1.2;
   overflow-x: hidden;
-  line-height: 1.4;
-  cursor: crosshair;
 }
 
-/* Background Terminal Grid Overlay */
+/* Brutalist Grid Background */
 body::before {
   content: "";
   position: fixed;
@@ -41,347 +40,288 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
+  background-image: 
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 50px 50px;
+  background-size: 100px 100px;
+  opacity: 0.05;
   pointer-events: none;
   z-index: -1;
 }
 
 .container {
-  width: min(1400px, 100% - 60px);
+  width: 100%;
+  max-width: 1600px;
   margin: 0 auto;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
 }
 
-/* Navigation - Floating Terminal Header */
+/* Brutalist Header */
 .header {
-  position: fixed;
-  top: 30px;
-  left: 30px;
-  right: 30px;
+  border-bottom: 2px solid var(--line);
+  background: var(--bg);
+  padding: 40px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+  align-items: flex-end;
 }
 
 .brand {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  color: var(--terminal);
-  background: rgba(0,0,0,0.8);
-  padding: 10px 20px;
-  border: 1px solid var(--terminal);
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 0.8;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: -0.05em;
 }
 
 .brand span {
-  color: var(--ink);
+  font-weight: 300;
+  font-size: 1rem;
+  font-family: var(--font-mono);
+  display: block;
+  margin-top: 10px;
+  color: var(--accent);
 }
 
 .nav {
   display: flex;
-  gap: 20px;
+  gap: 40px;
 }
 
-.nav-item {
+.nav-link {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.8rem;
   text-decoration: none;
-  background: rgba(0,0,0,0.6);
-  padding: 8px 15px;
-  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--ink);
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  padding: 10px 20px;
+  background: var(--surface);
   transition: var(--transition);
 }
 
-.nav-item:hover {
-  border-color: var(--cyan);
-  color: var(--cyan);
+.nav-link:hover {
+  background: var(--ink);
+  color: var(--bg);
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0 var(--accent);
 }
 
-/* Hero Section - Terminal Experience */
+/* Hero Section */
 .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--line);
 }
 
 .hero-content {
-  width: 50%;
-  position: relative;
-  z-index: 10;
+  padding: 80px;
+  border-right: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .status-log {
   font-family: var(--font-mono);
-  font-size: 0.7rem;
-  color: var(--terminal);
-  margin-bottom: 20px;
-  display: block;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .hero-title {
-  font-size: 6rem;
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 10vw, 8rem);
+  line-height: 0.85;
+  margin-bottom: 60px;
   text-transform: uppercase;
-  margin-bottom: 40px;
-  color: var(--terminal);
+  letter-spacing: -0.04em;
+}
+
+.hero-desc {
+  font-size: 1.5rem;
+  max-width: 500px;
+  color: var(--muted);
+  margin-bottom: 60px;
+}
+
+.hero-media {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.1);
+  transition: 1s var(--transition);
+}
+
+.hero-media:hover img {
+  filter: grayscale(0) contrast(1);
+}
+
+/* Blueprint Data Overlay */
+.blueprint-data {
+  position: absolute;
+  top: 20px;
+  left: 20px;
   font-family: var(--font-mono);
+  font-size: 0.65rem;
+  background: var(--surface);
+  padding: 10px;
+  border: 1px solid var(--line);
+  pointer-events: none;
 }
 
-.hero-title span {
-  display: inline;
-  color: inherit;
-  -webkit-text-stroke: none;
+/* Section Labels */
+.section-label {
+  padding: 20px 40px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--bg);
 }
 
-.cursor {
-  display: inline-block;
-  width: 10px;
-  height: 1em;
-  background: var(--terminal);
-  margin-left: 5px;
-  vertical-align: middle;
-  animation: blink 1s infinite;
+/* Trend Grid */
+.trend-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--line);
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+.trend-visual {
+  height: 600px;
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-/* CAD OVERLAY SYSTEM */
+#trend-network-container {
+  width: 100%;
+  height: 100%;
+}
+
+.trend-data {
+  padding: 80px;
+}
+
+.trend-data h3 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  margin-bottom: 40px;
+}
+
+.data-block {
+  border: 1px solid var(--line);
+  padding: 40px;
+  background: var(--surface);
+  margin-bottom: 20px;
+}
+
+/* Product Showcase */
+.showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.product-card {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.product-card:last-child {
+  border-right: none;
+}
+
+.product-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: var(--transition);
+}
+
 .cad-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 255, 65, 0.05);
+  background: rgba(255, 69, 0, 0.1);
   opacity: 0;
-  transition: opacity 0.4s;
-  pointer-events: none;
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 20px;
-  z-index: 20;
-}
-
-.hero-image-box:hover .cad-overlay, .product-card:hover .cad-overlay {
-  opacity: 1;
-}
-
-.hero-desc {
-  font-size: 1.1rem;
-  color: #888;
-  max-width: 450px;
-  margin-bottom: 50px;
-}
-
-.hero-image-box {
-  position: absolute;
-  top: 10%;
-  right: 0;
-  width: 55%;
-  height: 80vh;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  overflow: hidden;
-}
-
-.hero-image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(1) contrast(1.2);
-  opacity: 0.8;
-}
-
-.data-overlay {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  font-family: var(--font-mono);
-  font-size: 0.6rem;
-  color: var(--cyan);
-  text-align: right;
-  pointer-events: none;
-}
-
-/* Trend Compiler Section */
-.compiler-section {
-  padding: 150px 0;
-  border-top: 1px solid var(--line);
-}
-
-.section-label {
-  font-family: var(--font-mono);
-  color: var(--pink);
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.grid-asymmetric {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 30px;
-}
-
-.compiler-visual {
-  grid-column: 1 / 8;
-  aspect-ratio: 16/9;
-  background: #000;
-  border: 1px solid var(--line);
-  position: relative;
-  display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.compiler-data {
-  grid-column: 9 / 13;
   padding: 40px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-}
-
-.insight-box {
-  margin-top: 30px;
-  border-left: 2px solid var(--terminal);
-  padding-left: 20px;
-}
-
-/* Showcase Grid */
-.showcase {
-  padding: 100px 0;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
-.product-card {
-  position: relative;
-  border: 1px solid var(--line);
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.product-img {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  filter: grayscale(1);
-  transition: var(--transition);
-}
-
-.product-cad-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 255, 65, 0.05);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  opacity: 0;
-  transition: var(--transition);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--terminal);
-  padding: 20px;
-  z-index: 20;
+  font-size: 0.7rem;
 }
 
-.cad-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 65, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  pointer-events: none;
-}
-
-.cad-frame {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border: 1px solid var(--terminal);
-  border-style: dashed;
-  opacity: 0.3;
-  pointer-events: none;
-}
-
-.product-cad-overlay p {
-    position: relative;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 2px 5px;
-    margin: 2px 0;
-    border-left: 2px solid var(--terminal);
+.product-card:hover .cad-overlay {
+  opacity: 1;
 }
 
 .product-card:hover .product-img {
-  filter: grayscale(0.2) blur(5px);
+  filter: grayscale(0.5) blur(20px);
 }
 
-.product-card:hover .product-cad-overlay {
-  opacity: 1;
-}
-
-/* Styled Button - The Compiler */
-.btn-compile {
+/* Button */
+.btn-industrial {
   display: inline-block;
-  padding: 15px 40px;
-  background: transparent;
-  border: 1px solid var(--terminal);
-  color: var(--terminal);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
+  background: var(--accent);
+  color: var(--bg);
   text-decoration: none;
+  font-family: var(--font-mono);
+  font-weight: 900;
+  padding: 20px 40px;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  position: relative;
-  overflow: hidden;
   transition: var(--transition);
 }
 
-.btn-compile:hover {
-  background: var(--terminal);
-  color: #000;
-  box-shadow: 0 0 20px var(--terminal);
+.btn-industrial:hover {
+  background: var(--ink);
+  transform: scale(1.05);
 }
 
-/* Responsive */
+/* Footer */
+.footer {
+  padding: 100px 40px;
+  background: var(--ink);
+  color: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer-brand {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+}
+
 @media (max-width: 1024px) {
-  .hero-title { font-size: 4rem; }
-  .grid-asymmetric { grid-template-columns: 1fr; }
-  .compiler-visual, .compiler-data { grid-column: 1 / -1; }
-  .product-grid { grid-template-columns: 1fr 1fr; }
+  .hero, .trend-section { grid-template-columns: 1fr; }
+  .hero-content { border-right: none; border-bottom: 1px solid var(--line); }
+  .showcase { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
-  .hero { flex-direction: column; text-align: center; }
-  .hero-content { width: 100%; }
-  .hero-image-box { position: relative; width: 100%; margin-top: 50px; }
-  .product-grid { grid-template-columns: 1fr; }
+  .showcase { grid-template-columns: 1fr; }
+  .brand { font-size: 2.5rem; }
 }

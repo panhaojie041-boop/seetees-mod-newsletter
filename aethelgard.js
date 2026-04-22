@@ -1,39 +1,49 @@
-// Aethelgard Terminal Engine [v1.0]
+// Aethelgard Terminal Engine [v10.0] - Mechanical/Industrial Simulation
 const terminalInit = () => {
     const statusEl = document.getElementById('terminal-status');
-    if (!statusEl) return;
+    const heroTitle = document.querySelector('.hero-title');
+    if (!statusEl || !heroTitle) return;
+
+    // Reset Title for effect
+    const originalTitle = heroTitle.innerHTML;
+    heroTitle.style.opacity = '0';
 
     const messages = [
-        '[init_system_v1.0]...',
-        '[loading_trend_compiler]...',
-        '[detecting:3d_knitting_v2.5]...',
-        '[detecting:bio_synth_cell_v1.2]...',
-        '[detecting:holo_text_neo_09]...',
-        '[detecting:haptic_perf_text_88]...',
-        '[detecting:dt_supply_reset_v4]...',
-        '[connecting_seetees_ai_core]...',
-        '[system_ready]'
+        '[BOOT_V10.0.1_STABLE]',
+        '[CHECKING_GRID_SYSTEMS]... OK',
+        '[LOADING_BRUTALIST_UI]... OK',
+        '[SCANNING_TRENDS_LIBRARY]...',
+        '[3D_KNITTING_v2.5] detected',
+        '[BIO_SYNTH_CELL_v1.2] detected',
+        '[HOLO_TEXT_NEO_09] detected',
+        '[HAPTIC_PERF_88] detected',
+        '[SYSTEM_ONLINE]'
     ];
+    
     let msgIndex = 0;
-
     const nextMessage = () => {
         if (msgIndex < messages.length) {
             statusEl.textContent = messages[msgIndex];
             msgIndex++;
-            setTimeout(nextMessage, 1000 + Math.random() * 1000);
+            // Mechanical typewriter speed
+            setTimeout(nextMessage, 150 + Math.random() * 200);
+        } else {
+            // Show title with mechanical snap
+            heroTitle.style.opacity = '1';
         }
     };
-    nextMessage();
+    
+    setTimeout(nextMessage, 500);
 };
 
-// The Code of Trend - D3.js Network Visualization
+// Brutalist Trend Network - Black & Rigid
 const initTrendNetwork = (containerId) => {
     const container = document.getElementById(containerId);
     if (!container) return;
 
     function renderNetwork(container) {
         const width = container.clientWidth;
-        const height = 400;
+        const height = container.clientHeight || 600;
 
         d3.select(container).selectAll("svg").remove();
 
@@ -44,43 +54,44 @@ const initTrendNetwork = (containerId) => {
             .attr('viewBox', `0 0 ${width} ${height}`);
 
         const nodes = [
-            { id: '3D_KNITTING', group: 1 },
-            { id: 'BIO_SYNTH_CELL', group: 1 },
-            { id: 'HOLO_TEXT_NEO', group: 2 },
-            { id: 'HAPTIC_PERF_TEXT', group: 2 },
-            { id: 'DT_SUPPLY_RESET', group: 3 },
+            { id: '3D_KNIT', group: 1 },
+            { id: 'BIO_LEATHER', group: 1 },
+            { id: 'HOLO_TEX', group: 2 },
+            { id: 'HAPTIC_88', group: 2 },
+            { id: 'SUPPLY_CHAIN', group: 3 },
             { id: 'AETHELGARD_CORE', group: 0 }
         ];
 
         const links = [
-            { source: 'AETHELGARD_CORE', target: '3D_KNITTING' },
-            { source: 'AETHELGARD_CORE', target: 'BIO_SYNTH_CELL' },
-            { source: '3D_KNITTING', target: 'HAPTIC_PERF_TEXT' },
-            { source: 'BIO_SYNTH_CELL', target: 'DT_SUPPLY_RESET' },
-            { source: 'AETHELGARD_CORE', target: 'HOLO_TEXT_NEO' },
-            { source: 'HOLO_TEXT_NEO', target: '3D_KNITTING' }
+            { source: 'AETHELGARD_CORE', target: '3D_KNIT' },
+            { source: 'AETHELGARD_CORE', target: 'BIO_LEATHER' },
+            { source: '3D_KNIT', target: 'HAPTIC_88' },
+            { source: 'BIO_LEATHER', target: 'SUPPLY_CHAIN' },
+            { source: 'AETHELGARD_CORE', target: 'HOLO_TEX' }
         ];
 
         const simulation = d3.forceSimulation(nodes)
             .force('link', d3.forceLink(links).id(d => d.id).distance(150))
-            .force('charge', d3.forceManyBody().strength(-500))
+            .force('charge', d3.forceManyBody().strength(-800))
             .force('center', d3.forceCenter(width / 2, height / 2));
 
         const link = svg.append('g')
-            .attr('stroke', '#00ff41')
-            .attr('stroke-opacity', 0.2)
+            .attr('stroke', '#000000')
+            .attr('stroke-opacity', 0.1)
             .selectAll('line')
             .data(links)
             .join('line')
-            .attr('stroke-width', 1);
+            .attr('stroke-width', 2);
 
         const node = svg.append('g')
-            .selectAll('circle')
+            .selectAll('rect')
             .data(nodes)
-            .join('circle')
-            .attr('r', 5)
-            .attr('fill', d => d.id === 'AETHELGARD_CORE' ? '#ff00ff' : '#00ff41')
-            .attr('filter', 'drop-shadow(0 0 5px #00ff41)');
+            .join('rect')
+            .attr('width', 12)
+            .attr('height', 12)
+            .attr('x', -6)
+            .attr('y', -6)
+            .attr('fill', d => d.id === 'AETHELGARD_CORE' ? '#ff4500' : '#000000');
 
         const text = svg.append('g')
             .selectAll('text')
@@ -88,10 +99,11 @@ const initTrendNetwork = (containerId) => {
             .join('text')
             .text(d => d.id)
             .attr('font-size', '10px')
-            .attr('fill', '#ffffff')
+            .attr('fill', '#000000')
             .attr('font-family', 'IBM Plex Mono, monospace')
-            .attr('dx', 12)
-            .attr('dy', 4);
+            .attr('font-weight', '700')
+            .attr('dx', 15)
+            .attr('dy', 5);
 
         simulation.on('tick', () => {
             link
@@ -101,8 +113,7 @@ const initTrendNetwork = (containerId) => {
                 .attr('y2', d => d.target.y);
 
             node
-                .attr('cx', d => d.x)
-                .attr('cy', d => d.y);
+                .attr('transform', d => `translate(${d.x},${d.y})`);
 
             text
                 .attr('x', d => d.x)
@@ -117,9 +128,7 @@ const initTrendNetwork = (containerId) => {
         });
     }
 
-    if (typeof d3 !== 'undefined') {
-        renderNetwork(container);
-    }
+    renderNetwork(container);
 };
 
 document.addEventListener('DOMContentLoaded', () => {
