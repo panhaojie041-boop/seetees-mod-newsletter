@@ -3,75 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archivio // SeeteeS MOD</title>
+  <title>SeeteeS MOD // Archive V11</title>
+  <meta name="description" content="SeeteeS MOD - Historical Files // Raw Couture Archive.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter+Tight:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand-link" href="index.html" style="text-decoration: none; color: inherit;">
-        <div class="brand-name">SeeteeS<span>mod.</span></div>
-      </a>
-      <nav>
-        <a class="nav-link" href="index.html">Analisi</a>
-        <a class="nav-link" href="archive.html">Archivio</a>
+
+  <header class="container">
+    <div class="header">
+      <a href="index.html" class="brand">SeeteeS.MOD</a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Market</a>
+        <a href="archive.html" class="nav-link" style="color: var(--accent);">Archives</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <section style="padding: 60px 0;">
-      <span class="label-street">Database Storico</span>
-      <h1 style="font-family: var(--font-serif); font-size: 4rem; margin: 10px 0;">Archivio Intel.</h1>
-    </section>
-
-    <div class="news-list">
-      <!-- ARCHIVE_START -->
-      <a href="posts/2026-04-09-futuro-lusso-harrods-goldenpoint-gucci.html" class="news-row reveal">
-        <div class="meta">09 APR 26</div>
-        <h3>Il Futuro del Lusso tra Resilienza e Nuovi Orizzonti</h3>
-        <span class="meta">ANALISI</span>
-      </a>
-      <a href="posts/2026-04-09-kering-bottega-veneta-rongone-dimissioni.html" class="news-row reveal">
-        <div class="meta">09 APR 26</div>
-        <h3>Bartolomeo Rongone lascia Bottega Veneta: Terremoto ai vertici</h3>
-        <span class="meta">ANALISI</span>
-      </a>
-      <a href="posts/2026-04-08-hermes-risultati-q1-2026-resilienza.html" class="news-row reveal">
-        <div class="meta">08 APR 26</div>
-        <h3>Hermès Q1 2026: La strategia della scarsità</h3>
-        <span class="meta">ANALISI</span>
-      </a>
-      <!-- ARCHIVE_END -->
+    <div class="section-header">
+      <span class="section-tag">Historical Records</span>
+      <h2 class="section-title">Archives.</h2>
     </div>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>
-          <div class="stamp-confidential">Confidential</div>
+    <div class="showcase">
+      <a href="posts/2026-04-09-futuro-lusso-harrods-goldenpoint-gucci.html" class="product-item reveal">
+        <div class="product-thumb">
+          <img src="https://images.unsplash.com/photo-1548033511-46aa9174b338?q=80&w=2070&auto=format&fit=crop" alt="Article 01">
         </div>
-        <div style="text-align: right;">
-          <p style="font-size: 0.6rem;">© SeeteeS All Rights Reserved.</p>
+        <div class="product-info">
+          <h4>Sartorial Future</h4>
+          <p>09 APR 2026 // ANALYSIS</p>
         </div>
-      </div>
-    </footer>
+      </a>
+      <a href="posts/2026-04-09-kering-bottega-veneta-rongone-dimissioni.html" class="product-item reveal">
+        <div class="product-thumb">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2040&auto=format&fit=crop" alt="Article 02">
+        </div>
+        <div class="product-info">
+          <h4>Kering Reset</h4>
+          <p>09 APR 2026 // MARKET</p>
+        </div>
+      </a>
+      <!-- Add more items as needed -->
+    </div>
   </main>
 
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">SeeteeS.MOD</div>
+        <p style="font-size: 0.7rem; font-weight: 700; color: #888;">EDITION 11 // ARCHIVE // 2026</p>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, { threshold: 0.1 });
-      reveals.forEach(el => observer.observe(el));
-    });
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

@@ -3,69 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{TITLE}} | SeeteeS MOD</title>
+  <title>{{TITLE}} | SEETEES.MOD // Raw Couture</title>
+  <meta name="description" content="{{DESCRIPTION}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a class="brand-link" href="../index.html" style="text-decoration: none; color: inherit;">
-        <div class="brand-name">SeeteeS<span>mod.</span></div>
-      </a>
-      <nav>
-        <a class="nav-link" href="../index.html">Analisi</a>
-        <a class="nav-link" href="../archive.html">Archivio</a>
-      </nav>
-    </div>
+
+  <header class="header container">
+    <a href="../index.html" class="brand">SeeteeS<span>.MOD</span></a>
+    <nav class="nav">
+      <a href="../index.html" class="nav-item">Analisi</a>
+      <a href="../archive.html" class="nav-item">Archivio</a>
+    </nav>
   </header>
 
   <main class="container">
-    <article class="post-content reveal" style="padding: 80px 0;">
-      <span class="label-street">{{CATEGORY}} // {{DATE}}</span>
-      <h1 style="font-family: var(--font-serif); font-size: clamp(2.5rem, 5vw, 4.5rem); margin: 20px 0; line-height: 1;">{{TITLE}}</h1>
-      
-      <div style="margin: 40px 0; border: 4px solid #000; padding: 2px;">
-        <img src="{{IMAGE_URL}}" alt="{{TITLE}}" style="width: 100%; height: auto; display: block; filter: grayscale(100%);">
-      </div>
+    <article class="post-content fade-in" style="padding: 100px 0;">
+      <header class="post-header">
+        <span class="label">Briefing Strategico // {{DATE}}</span>
+        <h1 class="hero-title" style="font-size: 5rem;">{{TITLE}}</h1>
+        <p class="post-lead" style="font-size: 1.5rem; margin-top: 40px; max-width: 800px; line-height: 1.4; color: var(--accent);">
+          {{LEAD}}
+        </p>
+      </header>
 
-      <div class="editorial-text" style="font-size: 1.2rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
-        {{CONTENT}}
-      </div>
-      
-      <!-- 3D Placeholder -->
-      <div class="viewer-3d-container" style="margin-top: 60px; border: 2px dashed #ccc; padding: 40px; text-align: center;">
-        <p class="meta">3D VISUAL INTELLIGENCE TERMINAL</p>
-        <p style="color: #888;">[ Modello 3D in fase di caricamento... ]</p>
-      </div>
+      <section class="post-body" style="padding: 80px 0; max-width: 800px;">
+        <div style="margin-bottom: 60px;">
+          <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 30px; font-style: italic;">Key Insights</h2>
+          <ul style="list-style: none; font-size: 1.1rem; line-height: 2;">
+            <li style="border-bottom: 1px solid var(--line); padding: 15px 0;">— {{POINT_1}}</li>
+            <li style="border-bottom: 1px solid var(--line); padding: 15px 0;">— {{POINT_2}}</li>
+            <li style="border-bottom: 1px solid var(--line); padding: 15px 0;">— {{POINT_3}}</li>
+          </ul>
+        </div>
+
+        <div style="font-size: 1.2rem; line-height: 1.6; margin-bottom: 60px;">
+          <h2 style="font-family: var(--font-serif); font-size: 2.5rem; margin-bottom: 30px; font-style: italic;">Market Context</h2>
+          <p>{{WHY_IT_MATTERS}}</p>
+        </div>
+
+        <!-- 3D Preview Styled for Raw Couture -->
+        <div class="preview-3d" style="display: {{SHOW_3D}}; margin: 100px 0; border: 1px solid var(--ink); padding: 10px;">
+          <p class="label" style="margin-bottom: 15px;">Digital Asset Preview</p>
+          <iframe id="clo3d-iframe" src="{{CLO3D_URL}}" style="width: 100%; aspect-ratio: 16/9; border: none; background: #f0f0f0;"></iframe>
+        </div>
+
+        <div class="post-sources" style="margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--ink);">
+          <p class="label">Verified Intelligence</p>
+          <div style="display: flex; gap: 40px; margin-top: 20px;">
+            <a href="{{SOURCE_URL_1}}" target="_blank" class="nav-item">Source 01</a>
+            <a href="{{SOURCE_URL_2}}" target="_blank" class="nav-item">Source 02</a>
+          </div>
+        </div>
+      </section>
     </article>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        <div>
-          <div class="stamp-confidential">Confidential</div>
-        </div>
-        <div style="text-align: right;">
-          <p style="font-size: 0.6rem;">© SeeteeS All Rights Reserved.</p>
-        </div>
-      </div>
+    <footer class="footer container fade-in">
+      <div class="footer-brand">SeeteeS.MOD</div>
+      <p class="footer-info">© 2026 // RAW COUTURE EDITION</p>
     </footer>
   </main>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const reveals = document.querySelectorAll('.reveal');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, { threshold: 0.1 });
-      reveals.forEach(el => observer.observe(el));
-    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

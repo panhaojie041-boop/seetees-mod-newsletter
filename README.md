@@ -1,17 +1,16 @@
-# AETHELGARD [v1.0] - L'Avanguardia della Moda Codificata
+# SEETEES MOD [v11] - Raw Couture Editorial
 
-Progetto di transizione da blog editoriale a **Fashion Tech Intelligence Terminal**. 
+Progetto di transizione verso un'estetica **Raw Couture**: la fusione tra Alta Sartoria e Ribellione Street.
 
-## Caratteristiche Tecniche
-- **Terminal Engine**: Sistema di boot simulato e auto-typing per log d'intelligence.
-- **The Code of Trend**: Visualizzazione a rete neurale interattiva via D3.js.
-- **CAD Hover System**: Overlay tecnici e scansione metadati sui capi d'avanguardia.
-- **Deep Night UI**: Palette ad alto contrasto (#050505) con accenti Matrix Green e Neon.
+## Caratteristiche Visive (V11)
+- **Palette**: Bianco Ottico (#ffffff), Nero Assoluto, Blu Cobalto Elettrico (#0021ff).
+- **Typography Clash**: Cormorant Garamond (Serif Italic) sovrapposto a Inter Tight (Sans-Serif).
+- **Fluid Layout**: Struttura editoriale liquida con immagini di grandi dimensioni e ampi spazi bianchi.
+- **Motion**: Transizioni di fade-in eleganti per un'esperienza di lettura lussuosa.
 
 ## Stack Tecnologico
-- **Frontend**: Vanilla JS, D3.js, CSS Grid/Flexbox.
-- **Engine**: SeeteeS.MOD AI Logic.
-- **Design**: Street-Cyber-Luxe Editorial.
+- **Frontend**: Vanilla JS, CSS Custom Properties.
+- **Design**: Raw Couture / Street Luxe.
 
 ## Deployment
 Il progetto è ospitato su GitHub Pages.
