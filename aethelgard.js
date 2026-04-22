@@ -1,22 +1,25 @@
 // Aethelgard Terminal Engine [v10.0] - Mechanical/Industrial Simulation
 const terminalInit = () => {
     const statusEl = document.getElementById('terminal-status');
-    const heroTitle = document.querySelector('.hero-title');
+    const heroTitle = document.getElementById('main-title');
     if (!statusEl || !heroTitle) return;
 
     // Reset Title for effect
     const originalTitle = heroTitle.innerHTML;
-    heroTitle.style.opacity = '0';
+    heroTitle.innerHTML = '<span class="cursor-block"></span>';
+    heroTitle.style.opacity = '1';
 
     const messages = [
         '[BOOT_V10.0.1_STABLE]',
         '[CHECKING_GRID_SYSTEMS]... OK',
         '[LOADING_BRUTALIST_UI]... OK',
+        '[SYSTEM_OVERRIDE: MANUAL]',
         '[SCANNING_TRENDS_LIBRARY]...',
         '[3D_KNITTING_v2.5] detected',
         '[BIO_SYNTH_CELL_v1.2] detected',
         '[HOLO_TEXT_NEO_09] detected',
         '[HAPTIC_PERF_88] detected',
+        '[PHASE: 3D_FABRICATION]',
         '[SYSTEM_ONLINE]'
     ];
     
@@ -25,12 +28,29 @@ const terminalInit = () => {
         if (msgIndex < messages.length) {
             statusEl.textContent = messages[msgIndex];
             msgIndex++;
-            // Mechanical typewriter speed
             setTimeout(nextMessage, 150 + Math.random() * 200);
         } else {
-            // Show title with mechanical snap
-            heroTitle.style.opacity = '1';
+            typeTitle();
         }
+    };
+
+    const typeTitle = () => {
+        const text = "CODIFIED AVANT-GARDE.";
+        let i = 0;
+        heroTitle.innerHTML = '';
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                if (text[i] === ' ') {
+                    heroTitle.innerHTML += ' ';
+                } else {
+                    heroTitle.innerHTML += text[i];
+                }
+                i++;
+            } else {
+                clearInterval(interval);
+                heroTitle.innerHTML += '<span class="cursor-block"></span>';
+            }
+        }, 30); // 30ms Mechanical Speed
     };
     
     setTimeout(nextMessage, 500);
