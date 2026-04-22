@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AETHELGARD [v1.0] // Brutalist Luxe Technical Terminal</title>
+  <title>AETHELGARD [v10] // Brutalist Luxe Technical Terminal</title>
   <meta name="description" content="Aethelgard - Fashion Intelligence and Technical Design. Brutalist Luxe Edition.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,6 @@
 <body>
 
   <div class="container">
-    <!-- Header -->
     <header class="header">
       <div class="brand-group">
         <h1 class="brand">AETHELGARD</h1>
@@ -26,13 +25,12 @@
       </nav>
     </header>
 
-    <!-- Hero Section -->
     <main>
       <section class="hero">
         <div class="hero-content">
           <div class="hero-top">
-            <span class="section-label">[BUILD_INFO_2026]</span>
-            <h2 class="hero-title">
+            <span class="section-label" id="terminal-status">[SYSTEM_BOOTING]</span>
+            <h2 class="hero-title" id="main-title">
               <span>CODIFIED</span>
               AVANT-GARDE.
             </h2>
@@ -47,47 +45,30 @@
           </div>
         </div>
         <div class="hero-media">
+          <div class="blueprint-data">
+            [OBJECT_REF: ATH-992]<br>
+            [SCAN: ACTIVE]<br>
+            [DENSITY: 98.4%]<br>
+            [LOC: MILANO_IT]
+          </div>
           <img src="https://images.unsplash.com/photo-1548033511-46aa9174b338?q=80&w=2070&auto=format&fit=crop" alt="Technical Fashion Analysis">
         </div>
       </section>
 
-      <!-- Trend Compiler -->
       <section id="compiler" class="grid-module">
         <div class="module-viz">
-          <span class="section-label" style="position: absolute; top: 20px; left: 20px;">[TREND_NETWORK_DIAGRAM]</span>
-          <!-- Simplified Rigid Network Graph -->
-          <svg viewBox="0 0 800 500" style="width: 100%; height: 100%;">
-            <g stroke="#000" stroke-width="1">
-              <line x1="400" y1="250" x2="250" y2="150" />
-              <line x1="400" y1="250" x2="550" y2="150" />
-              <line x1="400" y1="250" x2="250" y2="350" />
-              <line x1="400" y1="250" x2="550" y2="350" />
-            </g>
-            <g fill="#fff" stroke="#000" stroke-width="2">
-              <rect x="390" y="240" width="20" height="20" />
-              <rect x="240" y="140" width="10" height="10" />
-              <rect x="540" y="140" width="10" height="10" />
-              <rect x="240" y="340" width="10" height="10" />
-              <rect x="540" y="340" width="10" height="10" />
-            </g>
-            <g font-family="var(--font-mono)" font-size="10" font-weight="700">
-              <text x="415" y="255">CORE_ENGINE</text>
-              <text x="255" y="148">3D_KNITTING</text>
-              <text x="555" y="148">BIO_FABRIC</text>
-              <text x="255" y="348">HOLO_TEXT</text>
-              <text x="555" y="348">DIGITAL_TWIN</text>
-            </g>
-          </svg>
+          <span class="section-label" style="position: absolute; top: 0; left: 0;">[TREND_NETWORK_DIAGRAM]</span>
+          <div id="trend-network-container" style="width: 100%; height: 100%;"></div>
         </div>
         <div class="module-data">
-          <div class="data-header">SYSTEM_OUTPUT // TREND_ANALYSIS_ID: 040926</div>
+          <div class="data-header" style="font-family: var(--font-mono); font-size: 0.7rem; margin-bottom: 20px;">SYSTEM_OUTPUT // TREND_ANALYSIS_ID: 040926</div>
           <div class="data-content">
-            <span class="section-label">ANALYSIS_LOG</span>
+            <span class="section-label" style="margin-bottom: 30px;">ANALYSIS_LOG</span>
             <h3>Il Futuro è un Software Biologico.</h3>
             <p style="font-size: 1.1rem; line-height: 1.6; color: #555;">
               La convergenza tra manifattura additiva e biotecnologie sta resettando i parametri del valore nel lusso. Non stiamo più disegnando abiti; stiamo compilando istruzioni per la materia.
             </p>
-            <div style="margin-top: 30px; padding: 20px; border: 1px dashed var(--line); background: #f9f9f9;">
+            <div style="margin-top: 30px; padding: 20px; border: 2px solid var(--line); background: var(--surface);">
               <p style="font-family: var(--font-mono); font-size: 0.75rem;">
                 [CRITICAL_UPDATE]: Kering rimpasto CEO accelererà la transizione verso filiere completamente tracciabili e asset digitali verificati.
               </p>
@@ -96,14 +77,12 @@
         </div>
       </section>
 
-      <!-- Showcase -->
       <section id="showcase">
-        <div class="section-header">
+        <div class="section-header" style="border-bottom: 2px solid var(--line); display: flex; justify-content: space-between; align-items: center;">
           <span class="section-label">TECHNICAL_CATALOGUE</span>
-          <p style="font-family: var(--font-mono); font-size: 0.65rem;">DISPLAYING: 04_OBJECTS</p>
+          <p style="font-family: var(--font-mono); font-size: 0.65rem; padding-right: 40px;">DISPLAYING: 04_OBJECTS</p>
         </div>
         <div class="showcase-grid">
-          <!-- Item 1 -->
           <a href="#" class="product-card">
             <div class="product-thumb">
               <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2040&auto=format&fit=crop" alt="Project 01">
@@ -114,7 +93,6 @@
               <p style="margin-top: 10px; opacity: 0.6;">3D_KNIT // LAB_GROWN // V1</p>
             </div>
           </a>
-          <!-- Item 2 -->
           <a href="#" class="product-card">
             <div class="product-thumb">
               <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1974&auto=format&fit=crop" alt="Project 02">
@@ -125,7 +103,6 @@
               <p style="margin-top: 10px; opacity: 0.6;">OPTICAL_FIBER // AI_PATTERN</p>
             </div>
           </a>
-          <!-- Item 3 -->
           <a href="#" class="product-card">
             <div class="product-thumb">
               <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1976&auto=format&fit=crop" alt="Project 03">
@@ -136,7 +113,6 @@
               <p style="margin-top: 10px; opacity: 0.6;">GRAPHENE_MIX // HEAT_REG</p>
             </div>
           </a>
-          <!-- Item 4 -->
           <a href="#" class="product-card">
             <div class="product-thumb">
               <img src="https://images.unsplash.com/photo-1544441893-675973e31985?q=80&w=2070&auto=format&fit=crop" alt="Project 04">
@@ -151,46 +127,19 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div>
         <div class="footer-brand">AETHELGARD</div>
         <p style="font-family: var(--font-mono); font-size: 0.6rem; margin-top: 10px;">FASHION_TECH_INTELLIGENCE // V10.0</p>
       </div>
-      <div class="footer-copy">
+      <div class="footer-copy" style="text-align: right;">
         <p>© 2026 // POWERED BY SEETEES.MOD AI ENGINE</p>
-        <p style="margin-top: 10px; color: var(--accent);">SYSTEM_STATUS: NOMINAL</p>
+        <p style="margin-top: 10px; color: var(--accent); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 700;">SYSTEM_STATUS: NOMINAL</p>
       </div>
     </footer>
   </div>
 
-  <script>
-    // Minimal Mechanical Reveal Animation
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section').forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(section);
-    });
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
-      });
-    });
-  </script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="aethelgard.js"></script>
 </body>
 </html>
